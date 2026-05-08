@@ -1,5 +1,2 @@
-[phases.setup]
-nixPkgs = ["php", "phpExtensions.mysqli", "phpExtensions.pdo_mysql"]
-
 [start]
 cmd = "php -S 0.0.0.0:$PORT -t /app/php-pmapp"
