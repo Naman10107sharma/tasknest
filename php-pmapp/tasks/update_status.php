@@ -4,13 +4,13 @@ require_once __DIR__ . '/../config/session.php';
 requireLogin();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /php-pmapp/dashboard/index.php');
+    header('Location: /dashboard/index.php');
     exit;
 }
 
 $taskId   = (int)($_POST['task_id'] ?? 0);
 $status   = $_POST['status'] ?? '';
-$redirect = $_POST['redirect'] ?? '/php-pmapp/tasks/index.php';
+$redirect = $_POST['redirect'] ?? '/tasks/index.php';
 $userId   = $_SESSION['user_id'];
 
 if (!$taskId || !in_array($status, ['pending', 'completed'])) {

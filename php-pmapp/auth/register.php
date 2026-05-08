@@ -8,7 +8,7 @@ $isAdminAdding = isLoggedIn() && isAdmin();
 
 // Agar normal logged-in user (non-admin) hai to dashboard pe bhejo
 if (isLoggedIn() && !isAdmin()) {
-    header('Location: /php-pmapp/dashboard/index.php');
+    header('Location: /dashboard/index.php');
     exit;
 }
 
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title><?= $isAdminAdding ? 'Add User' : 'Register' ?> — TaskNest</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="/php-pmapp/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
 </head>
 
 <?php if ($isAdminAdding): ?>
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="main-content">
         <div class="topbar">
             <div class="topbar-title">Add New User</div>
-            <a href="/php-pmapp/dashboard/index.php" class="btn btn-outline-primary btn-sm">
+            <a href="/dashboard/index.php" class="btn btn-outline-primary btn-sm">
                 <i class="bi bi-arrow-left me-1"></i> Back to Dashboard
             </a>
         </div>
@@ -176,7 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if ($success): ?>
             <div class="alert alert-success d-flex align-items-center gap-2">
                 <i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($success) ?>
-                <a href="/php-pmapp/auth/login.php" class="ms-auto fw-semibold" style="color:var(--teal-400)">Sign In →</a>
+                <a href="/auth/login.php" class="ms-auto fw-semibold" style="color:var(--teal-400)">Sign In →</a>
             </div>
         <?php endif; ?>
 
@@ -219,7 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <hr class="my-4">
         <p class="text-center text-muted mb-0">
             Already have an account?
-            <a href="/php-pmapp/auth/login.php" class="fw-semibold" style="color:var(--teal-400)!important">Sign in</a>
+            <a href="/auth/login.php" class="fw-semibold" style="color:var(--teal-400)!important">Sign in</a>
         </p>
     </div>
 </div>
