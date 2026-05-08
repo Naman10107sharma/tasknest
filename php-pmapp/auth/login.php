@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->close();
 
         // ✅ FIXED CONDITION (no syntax error)
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && $password === $user['password']) {
 
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['name']    = $user['name'];
