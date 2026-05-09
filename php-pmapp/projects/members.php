@@ -82,7 +82,7 @@ while ($row = $res->fetch_assoc()) {
                                 <p class="text-muted small mb-3">Check the members you want to add to this project.</p>
                                 <?php if ($allMembers && $allMembers->num_rows > 0): ?>
                                     <?php while ($m = $allMembers->fetch_assoc()): ?>
-                                    <div class="form-check border rounded-3 p-3 mb-2 <?= in_array($m['id'], $currentMemberIds) ? 'border-primary' style='background:var(--teal-glow);' : '' ?>">
+                                    <div class="form-check border rounded-3 p-3 mb-2 <?= in_array($m['id'], $currentMemberIds) ? 'border-primary' : '' ?>" style="<?= in_array($m['id'], $currentMemberIds) ? 'background:var(--teal-glow);' : '' ?>">
                                         <input class="form-check-input" type="checkbox"
                                                name="members[]" value="<?= $m['id'] ?>"
                                                id="m<?= $m['id'] ?>"
